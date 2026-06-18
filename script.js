@@ -9,14 +9,19 @@ let timer;
 cards.forEach(function(card) {
     card.addEventListener("mouseenter", function() {
         timer = setTimeout(function() {
-        expandedTitle.textContent = card.dataset.title;
-        expandedDirector.textContent = card.dataset.director;
-        expandedSynopsis.textContent = card.dataset.synopsis;
-        expandedCard.style.display = "block";
+            expandedTitle.textContent = card.dataset.title;
+            expandedDirector.textContent = card.dataset.director;
+            expandedSynopsis.textContent = card.dataset.synopsis;
+            expandedCard.style.display = "block";
         }, 1500);
     });
 
     card.addEventListener("mouseleave", function() {
         clearTimeout(timer);
+        expandedCard.style.display = "none";
     });
+});
+
+closeBtn.addEventListener("click", function() {
+    expandedCard.style.display = "none";
 });
