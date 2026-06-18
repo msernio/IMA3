@@ -1,3 +1,7 @@
+body {
+    background-color: rgb(10, 10, 10);
+    margin: 0;
+}
 
 .card_container {
     display: flex;
@@ -10,7 +14,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(21, 21, 21);
+    background-color: rgb(36, 36, 36);
     color:azure;
     border: none;
     border-radius: 5px;
@@ -23,31 +27,48 @@
     flex-direction: column;
 }
 
+
+.card-content {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-family: "DM Sans", sans-serif;
+}
+
+
+.letter {
+    font-family: "Bebas Neue";
+    position: absolute;
+    font-size: 3rem;
+    font-weight: bold;
+    transition: opacity 0.3s ease 0.3s;
+    margin: 10px;
+}
+
 .card:hover{
     flex: 5;
     background-color: rgb(0, 17, 255);
 }
 
 
-.card-content {
-    opacity: 0;
-    transition: opacity 0.1s ease;
-}
-
 .card:hover .card-content {
     opacity: 1;
     transition: opacity 0.3s ease 0.3s;
 }
 
-.letter {
-    position: absolute;
-    font-size: 4rem;
-    font-weight: bold;
-    opacity: 1;
-    margin: 10px;
-}
-
 .card:hover .letter {
     opacity: 0;
-    transition: opacity 0.3s ease 0.3s;
+    transition: opacity 0.1s ease 0.1s;
+}
+
+#expanded-card {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    border-radius: 20px;
+    z-index: 100;
+    padding: 3rem;
 }

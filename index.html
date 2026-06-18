@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IMA3</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">    
 
 </head>
     <body>
         <div class="card_container">
-            <div class="card">
+            <div class="card" data-title="Interstellar" data-director="Dir. Christopher Nolan, 2014" data-synopsis="A team of astronauts travel through a wormhole in search of a new home for humanity.">
                 <span class="letter">S</span>
                 <div class="card-content">
                     <h2>Interstellar</h2>
@@ -43,6 +42,7 @@
                     <h2>Interstellar</h2>
                     <p class="director">Dir. Christopher Nolan, 2014</p>
                     <p class="synopsis">A team of astronauts travel through a wormhole in search of a new home for humanity.</p>
+                
                 </div>
             </div>
             <div class="card">
@@ -54,5 +54,14 @@
                 </div>
             </div>
         </div>
+        <div id="expanded-card">
+            <button id="close-btn">✕</button>
+            <div id="expanded-content">
+                <h1 id="expanded-title"></h1>
+                <p id="expanded-director"></p>
+                <p id="expanded-synopsis"></p>
+            </div>
+        </div>
+            <script src="script.js"></script>
     </body>
 </html>
