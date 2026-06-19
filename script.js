@@ -15,6 +15,9 @@ cards.forEach(function(card) {
 
     card.addEventListener("mouseleave", function() {
         clearTimeout(timer);
+        card.classList.remove("expanded");
+        card.style.backgroundImage = "";
+
     });
 });
 
