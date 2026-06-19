@@ -32,10 +32,10 @@ body {
     opacity: 0;
     transition: opacity 0.3s ease;
     font-family: "DM Sans", sans-serif;
+    padding: 3rem;
     transition: opacity 0.3s ease, color 0.5s ease;
 
 }
-
 
 
 .letter {
@@ -55,22 +55,6 @@ body {
 }
 
 
-.card:hover .card-content {
-    opacity: 1;
-    transition: opacity 0.3s ease 0.3s;
-}
-
-#card-c:hover {
-    background-color: #1a0a05;
-}
-
-#card-c:hover h1, #card-c:hover p {
-    color: #c45c2a;
-}
-
-#card-c.expanded h1, #card-c.expanded p {
-    color: #ffffff;
-}
 
 .card:hover .letter {
     opacity: 0;
@@ -84,7 +68,7 @@ body {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0.3; }
+    from { opacity: 0; }
     to { opacity: 1; }
 }
 
@@ -101,10 +85,135 @@ body {
     transition: opacity 0.3s ease 0.5s;
 }
 
+.card:hover .card-content {
+    opacity: 1;
+    transition: opacity 0.3s ease 0.3s;
+}
+
+
+
+
+
+/* Card S Below */
+
+#card-s:hover {
+    background-color: #0a0a0f;
+}
+
+#card-s:hover h1, #card-s:hover p {
+    color: #c47b3a;
+}
+
+#card-s.expanded h1, #card-s.expanded p {
+    color: #ffffff;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+
+}
+
+#card-s.expanded {
+    background-image: url("img1.jpg");
+    background-size: cover;
+    background-position: center;
+    
+}
+
+
+/* Card P Below */
+
+#card-p:hover {
+    background-color: #0d1b2a;
+}
+
+#card-p:hover h1, #card-p:hover p {
+    color: #e8a94d;
+}
+
+#card-p.expanded h1, #card-p.expanded p {
+    color: #ffffff;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+
+}
+
+#card-p.expanded {
+    background-image: url("img2.jpg");
+    background-size: cover;
+    background-position: center;
+    
+}
+
+
+/* Card A Below */
+
+#card-a:hover {
+    background-color: #1a1f1e;
+}
+
+#card-a:hover h1, #card-a:hover p {
+    color: #7ab5a8;
+}
+
+#card-a.expanded h1, #card-a.expanded p {
+    color: black;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+    }
+
+#card-a.expanded {
+    background-image: url("img3.jpg");
+    background-size: cover;
+    background-position: center;
+    
+}
+
+
+
+/* Card C Below */
+
+#card-c:hover {
+    background-color: #1a0a05;
+}
+
+#card-c:hover h1, #card-c:hover p {
+    color: #c45c2a;
+}
+
+#card-c.expanded h1, #card-c.expanded p {
+    color: #ffffff;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+
+}
 
 #card-c.expanded {
     background-image: url("img4.jpg");
     background-size: cover;
     background-position: center;
+}
+
+
+/* Card E Below */
+
+#card-e:hover {
+    background-color: #080c12;
+}
+
+#card-e:hover h1, #card-e:hover p {
+    color: #4a7fc1;
     
 }
+
+#card-e.expanded h1, #card-e.expanded p {
+    color: #ffffff;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+
+}
+
+#card-e.expanded {
+    background-image: url("img5.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+
+
+
