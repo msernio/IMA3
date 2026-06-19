@@ -32,6 +32,8 @@ body {
     opacity: 0;
     transition: opacity 0.3s ease;
     font-family: "DM Sans", sans-serif;
+    transition: opacity 0.3s ease, color 0.5s ease;
+
 }
 
 
@@ -58,6 +60,18 @@ body {
     transition: opacity 0.3s ease 0.3s;
 }
 
+#card-c:hover {
+    background-color: #1a0a05;
+}
+
+#card-c:hover h1, #card-c:hover p {
+    color: #c45c2a;
+}
+
+#card-c.expanded h1, #card-c.expanded p {
+    color: #ffffff;
+}
+
 .card:hover .letter {
     opacity: 0;
     transition: opacity 0.1s ease 0.1s;
@@ -66,6 +80,12 @@ body {
 
 .card.expanded {
     height: 95vh;
+    animation: fadeIn 3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0.3; }
+    to { opacity: 1; }
 }
 
 .card-expanded-content {
@@ -79,4 +99,12 @@ body {
 .card.expanded .card-expanded-content {
     opacity: 1;
     transition: opacity 0.3s ease 0.5s;
+}
+
+
+#card-c.expanded {
+    background-image: url("img4.jpg");
+    background-size: cover;
+    background-position: center;
+    
 }
