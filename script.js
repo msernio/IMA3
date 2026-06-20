@@ -10,7 +10,7 @@ cards.forEach(function(card) {
     card.addEventListener("mouseenter", function() {
         timer = setTimeout(function() {
             card.classList.add("expanded");
-        }, 1500);
+        }, 3000);
     });
 
     card.addEventListener("mouseleave", function() {

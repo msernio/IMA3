@@ -19,12 +19,12 @@ body {
     border: none;
     border-radius: 5px;
     flex: 1;
-    transition: flex 1s ease, background-color 1s ease;
-    height: 500px;
+    transition: flex 1s ease, background-color 1s ease, height 0.8s ease;    height: 500px;
     margin: 2px;
     font-size: 16px;
     cursor: pointer;
     flex-direction: column;
+    
 }
 
 
@@ -49,7 +49,7 @@ body {
 
 .card:hover{
     flex: 5;
-    background-color: rgb(0, 17, 255);
+    background-color: rgb(36, 36, 36);
     transition: ease 2s;
 
 }
@@ -96,9 +96,7 @@ body {
 
 /* Card S Below */
 
-#card-s:hover {
-    background-color: #0a0a0f;
-}
+
 
 #card-s:hover h1, #card-s:hover p {
     color: #c47b3a;
@@ -120,9 +118,6 @@ body {
 
 /* Card P Below */
 
-#card-p:hover {
-    background-color: #0d1b2a;
-}
 
 #card-p:hover h1, #card-p:hover p {
     color: #e8a94d;
@@ -144,9 +139,6 @@ body {
 
 /* Card A Below */
 
-#card-a:hover {
-    background-color: #1a1f1e;
-}
 
 #card-a:hover h1, #card-a:hover p {
     color: #7ab5a8;
@@ -154,7 +146,6 @@ body {
 
 #card-a.expanded h1, #card-a.expanded p {
     color: black;
-    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
     }
 
 #card-a.expanded {
@@ -168,9 +159,6 @@ body {
 
 /* Card C Below */
 
-#card-c:hover {
-    background-color: #1a0a05;
-}
 
 #card-c:hover h1, #card-c:hover p {
     color: #c45c2a;
@@ -191,9 +179,6 @@ body {
 
 /* Card E Below */
 
-#card-e:hover {
-    background-color: #080c12;
-}
 
 #card-e:hover h1, #card-e:hover p {
     color: #4a7fc1;
