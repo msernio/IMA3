@@ -1,3 +1,6 @@
+/* For the overall body design, I chose a dark background to reflect the cinema/space environment, 
+and same with the fonts (Bebas Neue for headings, DM Sans). */
+
 body {
     background: linear-gradient(135deg, #050508, #080d14, #050508);
     margin: 0;
@@ -6,6 +9,26 @@ body {
     align-items: center;
 }
 
+
+.header {
+    font-size: 3rem;
+    color: rgb(233, 233, 233);
+    letter-spacing: 0.1em;
+    margin-top: 2rem;
+}
+
+.header-row {
+    color: rgb(126, 126, 126);
+    font-family: "dm sans", sans-serif;
+    margin-bottom: 4rem;
+    margin-top:3rem;
+    text-align: center;
+}
+
+
+
+
+
 .card_container {
     display: flex;
     justify-content: center;
@@ -13,6 +36,12 @@ body {
     width: 100%;
     margin-bottom: 5rem;
 }
+
+
+/* The .card element was probably what I spent the most time formatting. The cards needed to sit side by 
+side and expand proportionally. flex: 1 made them share space equally at rest and then min-width: 0 
+prevented the uneven sizing based on the content within each one. Transition properties were added for almost 
+everything to make smooth animations and transitions between each state. */
 
 .card {
     position: relative;
@@ -28,12 +57,10 @@ body {
     height: 700px;
     margin: 2px;
     font-size: 16px;
-    cursor: pointer;
     flex-direction: column;
     min-width: 0;
     overflow: hidden;
 }
-
 
 
 .card-content {
@@ -45,7 +72,6 @@ body {
     box-sizing: border-box;
 }
 
-
 .letter {
     font-family: "Bebas Neue";
     position: absolute;
@@ -55,6 +81,16 @@ body {
     margin: 10px;
 }
 
+
+
+
+
+/* Hover Animations and Formatting */
+
+
+/* For the main Hover animation, flex: 5 made the hovered card take up 5x more space than others — the core of the interaction and
+how it flows between each one. Then as stated prior, transition was use to controls the animation and how fast the expansion feels. */
+
 .card:hover {
     flex: 5;
     background-color: rgb(36, 36, 36);
@@ -62,12 +98,15 @@ body {
 }
 
 
-
 .card:hover .letter {
     opacity: 0;
     transition: opacity 0.1s ease 0.1s;
 }
 
+
+/* The second hover state is triggered by JavaScript after 3 seconds. The Height expands to 95vh and negative margins pull it toward the top 
+and bottom of the screen for a cinematic feel simialr to how ratios change in film - as stated in HTML comments, this is where I was having issues
+once I added the Header Row, but I was able to get it to function in a similar way, under the header. */
 
 .card.expanded {
     height: 95vh;
@@ -79,6 +118,9 @@ body {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
+/* The position: absolute is an element I used to remove the content from the document flow so it doesn't push state 1 (preview) content out of alignment. 
+Then height: 0 ensured it takes up no space when invisible as I was having the issue of taglines pushing the film detail content up slightly of centre. */
 
 .card-expanded-content {
     height: 0;
@@ -105,10 +147,13 @@ body {
 
 
 
+/* For each card, I've done unique hover colours derived from the visual palette of each film as the colour 
+will communicate the mood before the user reads any text. As you can see below, the text will change dependent 
+on the hover state the card is in. On top of that, each one has the unique background image chosen to complement 
+the film's aesthetic. */
 
 
 /* Card S Below */
-
 
 
 #card-s:hover h1, #card-s:hover p {
@@ -220,9 +265,7 @@ color: #7ab5a8;
     font-style: italic;
     font-weight: bold;
     font-size: 1rem;
-    color: #c0c0c0;
-    transition: opacity 1, 0.3s ease;
-    
+    color: #c0c0c0;    
 }
 
 
@@ -244,20 +287,6 @@ color: #7ab5a8;
     transition: opacity 0.3s ease;
 }
 
-.header {
-    font-size: 3rem;
-    color: rgb(233, 233, 233);
-    letter-spacing: 0.1em;
-    margin-top: 1;
-}
-
-.header-row {
-    color: rgb(126, 126, 126);
-    font-family: "dm sans", sans-serif;
-    margin-bottom: 4rem;
-    margin-top:3rem;
-    text-align: center;
-}
 
 .src {
     width: 20px;
