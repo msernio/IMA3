@@ -1,28 +1,21 @@
 const cards = document.querySelectorAll(".card");
-const expandedCard = document.querySelector("#expanded-card");
-const expandedTitle = document.querySelector("#expanded-title");
-const expandedDirector = document.querySelector("#expanded-director");
-const expandedSynopsis = document.querySelector("#expanded-synopsis");
-const closeBtn = document.querySelector("#close-btn");
 let timer;
 
 cards.forEach(function(card) {
+    const loader = card.querySelector(".card-loader");
+
     card.addEventListener("mouseenter", function() {
+        loader.classList.add("spinning");
         timer = setTimeout(function() {
+            loader.classList.remove("spinning");
             card.classList.add("expanded");
         }, 3000);
     });
 
     card.addEventListener("mouseleave", function() {
+        loader.classList.remove("spinning");
         clearTimeout(timer);
         card.classList.remove("expanded");
         card.style.backgroundImage = "";
-
-    });
-});
-
-document.addEventListener("click", function() {
-    cards.forEach(function(card) {
-        card.classList.remove("expanded");
     });
 });

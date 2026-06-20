@@ -1,57 +1,64 @@
 body {
-    background-color: rgb(10, 10, 10);
+    background: linear-gradient(135deg, #050508, #080d14, #050508);
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .card_container {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    width: 100%;
+    margin-bottom: 5rem;
 }
 
-.card{
+.card {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(36, 36, 36);
-    color:azure;
+    background-color: rgb(21, 21, 21);
+    color: azure;
     border: none;
     border-radius: 5px;
     flex: 1;
-    transition: flex 1s ease, background-color 1s ease, height 0.8s ease;    height: 500px;
+    transition: flex 1s ease, background-color 1s ease, height 0.8s ease;
+    height: 700px;
     margin: 2px;
     font-size: 16px;
     cursor: pointer;
     flex-direction: column;
-    
+    min-width: 0;
+    overflow: hidden;
 }
+
 
 
 .card-content {
     opacity: 0;
-    transition: opacity 0.3s ease;
-    font-family: "DM Sans", sans-serif;
-    padding: 3rem;
     transition: opacity 0.3s ease, color 0.5s ease;
-
+    font-family: "DM Sans", sans-serif;
+    padding: 2rem 2.5rem;
+    width: 80%;
+    box-sizing: border-box;
 }
 
 
 .letter {
     font-family: "Bebas Neue";
     position: absolute;
-    font-size: 3rem;
+    font-size: 5rem;
     font-weight: bold;
     transition: opacity 0.3s ease 0.3s;
     margin: 10px;
 }
 
-.card:hover{
+.card:hover {
     flex: 5;
     background-color: rgb(36, 36, 36);
-    transition: ease 2s;
-
+    transition: flex 0.6s ease, background-color 1s ease;
 }
 
 
@@ -65,6 +72,7 @@ body {
 .card.expanded {
     height: 95vh;
     animation: fadeIn 3s ease;
+    transition: flex 1s ease, background-color 1s ease, height 2s ease, margin-top 2s ease, margin-bottom 2s ease;
 }
 
 @keyframes fadeIn {
@@ -73,11 +81,16 @@ body {
 }
 
 .card-expanded-content {
+    height: 0;
+    overflow: visible;
     opacity: 0;
     transition: opacity 0.3s ease;
     font-family: "DM Sans", sans-serif;
+    position: absolute;
+    bottom: 15rem;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
-    padding: 2rem;
 }
 
 .card.expanded .card-expanded-content {
@@ -148,6 +161,10 @@ body {
     color: black;
     }
 
+#card-a.expanded .tagline {
+color: #7ab5a8;
+}
+
 #card-a.expanded {
     background-image: url("img3.jpg");
     background-size: cover;
@@ -199,6 +216,74 @@ body {
 
 
 
+.tagline {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #c0c0c0;
+    transition: opacity 1, 0.3s ease;
+    
+}
 
 
+.title-row {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: -1rem;
+}
 
+.card-title {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.rating {
+    font-size: 0.7rem;
+    margin-top: 2rem;
+    transition: opacity 0.3s ease;
+}
+
+.header {
+    font-size: 3rem;
+    color: rgb(233, 233, 233);
+    letter-spacing: 0.1em;
+    margin-top: 1;
+}
+
+.header-row {
+    color: rgb(126, 126, 126);
+    font-family: "dm sans", sans-serif;
+    margin-bottom: 4rem;
+    margin-top:3rem;
+    text-align: center;
+}
+
+.src {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.card-loader {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-top: 2px solid white;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card-loader.spinning {
+    opacity: 1;
+    animation: spin 3s linear forwards;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
